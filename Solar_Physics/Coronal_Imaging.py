@@ -38,10 +38,10 @@ print(fido)
 from shutil import rmtree
 from os import path
 
-code = str(input("Enter database code (171, 193)  :   "))
+wavelength = str(input("Enter database wavelength (171, 193)  :   "))
 
     
-dir_images = 'WEW2024_database/Sampledata_AIA'+code+'/'
+dir_images = 'WEW2024_database/Sampledata_AIA'+wavelength+'/'
 
 import matplotlib.pyplot as plt
 import sunpy.map
@@ -59,7 +59,7 @@ for picture in map_list[0:3]:
 input('Happy with the results? Press enter again in this box to save all of the figures as png images')
 
 
-dir_png = 'My_pics_AIA'+code
+dir_png = 'My_pics_AIA'+wavelength
 newdir(dir_png, exist_ok = True)
 
 for index, picture in enumerate(map_list):
@@ -82,7 +82,7 @@ for filename in sorted(glob.glob(f'{dir_png}/*.png')):
   size = (width,height)
   img_array.append(img)
 
-out = cv2.VideoWriter('solar_vid_disk_AIA'+code+'.mp4',cv2.VideoWriter_fourcc(*'MP4V'), 6, size)
+out = cv2.VideoWriter('solar_vid_disk_AIA'+wavelength+'.mp4',cv2.VideoWriter_fourcc(*'MP4V'), 6, size)
  
 for i in range(len(img_array)):
     out.write(img_array[i])
