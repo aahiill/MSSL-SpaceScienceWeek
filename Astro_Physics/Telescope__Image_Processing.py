@@ -11,14 +11,16 @@ import numpy as np
 def load_ccd_data(file_path):
     return CCDData.read(file_path, unit='adu')
 
-f1 = 'C:/Users/aahil/Desktop/Code/MSSL_SpaceScienceWeek/Astro_Physics/Object1/file1.fits'
-f2 = 'C:/Users/aahil/Desktop/Code/MSSL_SpaceScienceWeek/Astro_Physics/Object1/file2.fits'
-f3 = 'C:/Users/aahil/Desktop/Code/MSSL_SpaceScienceWeek/Astro_Physics/Object1/file3.fits'
-f4 = 'C:/Users/aahil/Desktop/Code/MSSL_SpaceScienceWeek/Astro_Physics/Object1/file4.fits'
-f5 = 'C:/Users/aahil/Desktop/Code/MSSL_SpaceScienceWeek/Astro_Physics/Object1/file5.fits'
-f6 = 'C:/Users/aahil/Desktop/Code/MSSL_SpaceScienceWeek/Astro_Physics/Object1/file6.fits'
-f7 = 'C:/Users/aahil/Desktop/Code/MSSL_SpaceScienceWeek/Astro_Physics/Object1/file7.fits'
-f8 = 'C:/Users/aahil/Desktop/Code/MSSL_SpaceScienceWeek/Astro_Physics/Object1/file8.fits'
+obj = input("Enter which object (1, 2, 3)   :   ")
+
+f1 = 'C:/Users/aahil/Desktop/Code/MSSL_SpaceScienceWeek/Astro_Physics/Object'+obj+'/file1.fits'
+f2 = 'C:/Users/aahil/Desktop/Code/MSSL_SpaceScienceWeek/Astro_Physics/Object'+obj+'/file2.fits'
+f3 = 'C:/Users/aahil/Desktop/Code/MSSL_SpaceScienceWeek/Astro_Physics/Object'+obj+'/file3.fits'
+f4 = 'C:/Users/aahil/Desktop/Code/MSSL_SpaceScienceWeek/Astro_Physics/Object'+obj+'/file4.fits'
+f5 = 'C:/Users/aahil/Desktop/Code/MSSL_SpaceScienceWeek/Astro_Physics/Object'+obj+'/file5.fits'
+f6 = 'C:/Users/aahil/Desktop/Code/MSSL_SpaceScienceWeek/Astro_Physics/Object'+obj+'/file6.fits'
+f7 = 'C:/Users/aahil/Desktop/Code/MSSL_SpaceScienceWeek/Astro_Physics/Object'+obj+'/file7.fits'
+f8 = 'C:/Users/aahil/Desktop/Code/MSSL_SpaceScienceWeek/Astro_Physics/Object'+obj+'/file8.fits'
 
 f1_data = load_ccd_data(f1)
 f2_data = load_ccd_data(f2)
