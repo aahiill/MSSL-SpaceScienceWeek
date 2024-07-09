@@ -29,7 +29,16 @@ f4_data = load_ccd_data(f4)
 f5_data = load_ccd_data(f5)
 f6_data = load_ccd_data(f6)
 f7_data = load_ccd_data(f7)
-f8_data = load_ccd_data(f8)
+f8_data = load_ccd_data(f8)     
+
+visible = f1 # this is the science file for the blue (B#639) filter.
+red_flat = f2 # this is the science file for the visible (V#641) filter.
+dark = f3 # this is the science file for the red (R#642) filter.
+blue = f4 # this is the flat file for the blue (B#639) filter.
+blue_flat = f5 # this is the flat file for the visible (V#641) filter.
+bias = f6 # this is the flat file for the red (R#642) filter.
+red = f7 # this is the bias file.
+visible_flat = f8 # this is the dark file.       
 
 
 plt.imshow(np.log10(f1_data), cmap = 'gray')
@@ -57,14 +66,19 @@ plt.imshow(np.log10(f8_data), cmap = 'gray')
 plt.title('f8')
 plt.show()
 
-blue = f1 # this is the science file for the blue (B#639) filter.
-visible = f2 # this is the science file for the visible (V#641) filter.
-red = f3 # this is the science file for the red (R#642) filter.
-blue_flat = f4 # this is the flat file for the blue (B#639) filter.
-visible_flat = f5 # this is the flat file for the visible (V#641) filter.
-red_flat = f6 # this is the flat file for the red (R#642) filter.
-bias = f7 # this is the bias file.
-dark = f8 # this is the dark file.
+"""
+Assign the files with their associated parameters. Make sure to assign the parameter to the associated file path (eg. f1)
+and not the file data (eg. f1_data)
+"""
+
+visible = f1 # this is the science file for the blue (B#639) filter.
+red_flat = f2 # this is the science file for the visible (V#641) filter.
+dark = f3 # this is the science file for the red (R#642) filter.
+blue = f4 # this is the flat file for the blue (B#639) filter.
+blue_flat = f5 # this is the flat file for the visible (V#641) filter.
+bias = f6 # this is the flat file for the red (R#642) filter.
+red = f7 # this is the bias file.
+visible_flat = f8 # this is the dark file.    
 
 def process_filter(flat, science, bias, dark):
     """
@@ -161,13 +175,13 @@ def scale_image(image, min_z, max_z, log_scale=False):
 
     return image_scaled
 
-#Change these parameters
-blue_min = 1
-blue_max = 1000
-visible_min = 1
-visible_max = 1000
-red_min = 1
-red_max = 1000
+# Changed these parameters using np.nanmax(corrected_blue/red/visible) to generate max
+blue_min = 200
+blue_max = 65000
+visible_min = 300
+visible_max = 67000
+red_min = 500
+red_max = 68000
 blue_ratio = 1
 visible_ratio = 1
 red_ratio = 1
