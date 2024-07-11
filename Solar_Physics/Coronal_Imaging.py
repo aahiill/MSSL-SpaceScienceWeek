@@ -87,5 +87,3 @@ out = cv2.VideoWriter('solar_vid_disk_AIA'+wavelength+'.mp4',cv2.VideoWriter_fou
 for i in range(len(img_array)):
     out.write(img_array[i])
 out.release()
-
-  
